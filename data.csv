@@ -1,4 +1,4 @@
-,편의점 명,상품 명,분류,개당 가격,행사 유형,이미지
+ID,CVS_NAME,PRODUCT_NAME,PRODUCT_CATEGORY,PRICE,PLUS,IMAGE
 0,CU(씨유),2080)센서티브미세모,생활용품,1600,1+1,http://cdn2.bgfretail.com/bgfbrand/files/product/8801046860458.jpg
 1,CU(씨유),2080)치약,생활용품,1750,1+1,http://bgf-cu.xcache.kinxcdn.com/product/8801046846087.jpg
 2,CU(씨유),46cm)초극세모칫솔,생활용품,1750,1+1,http://bgf-cu.xcache.kinxcdn.com/product/8801051009033.jpg
