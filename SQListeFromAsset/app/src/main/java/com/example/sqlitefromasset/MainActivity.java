@@ -1,18 +1,16 @@
-package com.example.sqlistefromasset;
+package com.example.sqlitefromasset;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.icu.util.Output;
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
 import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.sqlistefromasset.adapter.ListProductAdapter;
-import com.example.sqlistefromasset.database.DatabaseHelper;
-import com.example.sqlistefromasset.model.Product;
+import com.example.sqlitefromasset.adapter.ListProductAdapter;
+import com.example.sqlitefromasset.database.DatabaseHelper;
+import com.example.sqlitefromasset.model.Product;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -25,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private ListProductAdapter adapter;
     private List<Product> mProductList;
     private DatabaseHelper mDBHelpter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

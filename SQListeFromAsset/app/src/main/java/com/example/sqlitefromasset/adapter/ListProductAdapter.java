@@ -1,15 +1,17 @@
-package com.example.sqlistefromasset.adapter;
+package com.example.sqlitefromasset.adapter;
 
 import android.content.Context;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.sqlistefromasset.R;
-import com.example.sqlistefromasset.model.Product;
-
-import org.w3c.dom.Text;
+import com.example.sqlitefromasset.R;
+import com.example.sqlitefromasset.model.Product;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -39,14 +41,21 @@ public class ListProductAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View v = View.inflate(mContext, R.layout.item_listview, null);
-        TextView tvName = v.findViewById(R.id.tv_product_name);
-        TextView tvPrice = v.findViewById(R.id.tv_product_price);
-        TextView tvDescription = v.findViewById(R.id.tv_product_description);
-        tvName.setText(mProductList.get(position).getName());
-        tvPrice.setText(String.valueOf(mProductList.get(position).getPrice()) + " $");
-        tvDescription.setText(mProductList.get(position).getDescription());
 
+        View v = View.inflate(mContext, R.layout.item_listview, null);
+
+        ImageView Image = v.findViewById(R.id.image);
+        TextView Name = v.findViewById(R.id.product_name);
+        TextView Price = v.findViewById(R.id.price);
+        TextView CSV = v.findViewById(R.id.cvs_name);
+
+        Name.setText(mProductList.get(position).getName());
+        Price.setText(mProductList.get(position).getPrice() + "원");
+        CSV.setText(mProductList.get(position).getDescription());
+//        Image.setImageResource(R.drawable.image1);
+
+        Picasso.get().load(mProductList.get(position).getImage()).fit().into(Image);
+//        Picasso.get().load("http://i.imgur.com/DvpvklR.png").into(Image);
         return v;
     }
 }
