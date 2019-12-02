@@ -15,7 +15,7 @@
         android:id="@+id/image"
         android:layout_width="370px"
         android:layout_height="370px"
-        android:background="#000000"/>
+        android:background="#ffffff"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -23,33 +23,62 @@
         android:orientation="vertical"
         android:padding="10dp">
 
-
-        <TextView
-            android:id="@+id/product_name"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
-            android:textColor="#4bb6d6"
-            android:textSize="20dp"
-            android:layout_margin="5dp"/>
-
+            android:orientation="horizontal">
 
         <TextView
             android:id="@+id/cvs_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Description"
-            android:textSize="16dp"
-            android:textStyle="italic"
+            android:layout_margin="5dp"
+            android:text="CU(씨유)"
+            android:textColor="#1155cc"
+            android:textStyle="bold"
+            android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/product_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="과자"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_margin="5dp"
+                android:background="@drawable/rounded"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="2+1"
+            android:background="@drawable/rounded"
+            android:textColor="#351c75"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="포카칩"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:textStyle="bold"
             android:layout_margin="5dp"/>
+
 
         <TextView
             android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="100$"
+            android:text="1000원 (개당 가격)"
             android:textColor="#b30000"
             android:textSize="18dp"
+            android:textStyle="bold"
             android:layout_margin="5dp"/>
 
     </LinearLayout>

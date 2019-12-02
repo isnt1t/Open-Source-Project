@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,9 +17,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     Spinner spinner2;
     Spinner spinner3;
 
-    String names[] = {"편의점 선택", "GS25", "CU", "세븐일레븐", "이마트24", "미니스톱"};
-    String names2[] = {"상품 종류 선택", "과자류", "생활용품", "식품", "아이스크림", "음료"};
-    String names3[] = {"플러스 선택", "1+1", "2+1", "3+1"};
+    String names[] = {"편의점 전체", "GS25(지에스25)", "CU(씨유)", "7-ELEVEN(세븐일레븐)", "EMART24(이마트24)", "MINISTOP(미니스톱)"};
+    String names2[] = {"상품 분류 전체", "음료", "과자류", "식품", "아이스크림", "생활용품"};
+    String names3[] = {"플러스 전체", "1+1", "2+1", "3+1", "4+1"};
 
     // define array adapter of string type
     ArrayAdapter <String> adapter;
@@ -26,9 +27,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     ArrayAdapter <String> adapter3;
 
     // define string variable for record
-    String record = "";
-    String record2 = "";
-    String record3 = "";
+    public static String record = ""; // cvs
+    public static String record2 = ""; // category
+    public static String record3 = ""; // plus
+
+    public static EditText productName;
+    public static String name; // product_name
 
     @Override
     protected void onCreate(Bundle savedInstanceState) { // main 함수처럼 onCreate() 함수가 시작점의 역할
@@ -46,13 +50,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner3 = findViewById(R.id.spinner3);
         adapter3 = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, names3);
 
-//        display_data = findViewById(R.id.result);
-//        display_data2 = findViewById(R.id.result2);
-//        display_data3 = findViewById(R.id.result3);
-
         spinner.setAdapter(adapter);
         spinner2.setAdapter(adapter2);
         spinner3.setAdapter(adapter3);
+
+        productName = findViewById(R.id.editText);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -167,8 +169,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         });
 
 
-
-
         Button btn_map =  findViewById(R.id.button2);
         btn_map.setOnClickListener(
                 new Button.OnClickListener() {
@@ -186,6 +186,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(MainActivity.this, ListActivity.class);
+                        name = productName.getText().toString();
                         startActivity(intent);
                     }
                 }
@@ -202,8 +203,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//        String text = parent.getItemAtPosition(position).toString();
-//        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+
     }
 
     @Override

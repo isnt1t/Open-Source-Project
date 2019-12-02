@@ -13,7 +13,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class ListProductAdapter extends BaseAdapter {
+public class ListProductAdapter extends BaseAdapter{
     private Context mContext;
     private List<Product> mProductList;
 
@@ -44,12 +44,16 @@ public class ListProductAdapter extends BaseAdapter {
 
         TextView Name = v.findViewById(R.id.product_name);
         TextView Price = v.findViewById(R.id.price);
-        TextView CSV = v.findViewById(R.id.cvs_name);
+        TextView CVS = v.findViewById(R.id.cvs_name);
+        TextView Plus = v.findViewById(R.id.plus);
+        TextView Category = v.findViewById(R.id.product_category);
         ImageView Image = v.findViewById(R.id.image);
 
         Name.setText(mProductList.get(position).getName());
-        Price.setText(mProductList.get(position).getPrice() + "원");
-        CSV.setText(mProductList.get(position).getDescription());
+        Price.setText(mProductList.get(position).getPrice() + "원 (개당 가격)");
+        CVS.setText(mProductList.get(position).getCvs());
+        Plus.setText(mProductList.get(position).getPlus());
+        Category.setText(mProductList.get(position).getCategory());
         Picasso.get().load(mProductList.get(position).getImage()).into(Image);
 
         return v;

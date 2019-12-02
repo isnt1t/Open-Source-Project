@@ -24,11 +24,11 @@ public class ListActivity extends AppCompatActivity {
     private List<Product> mProductList;
     private DatabaseHelper mDBHelpter;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
         lvProduct = findViewById(R.id.listview_product);
         mDBHelpter = new DatabaseHelper(this);
 
