@@ -12,6 +12,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    Spinner spinner;
+    Spinner spinner2;
+    Spinner spinner3;
+
+    String names[] = {"편의점 선택", "GS25", "CU", "세븐일레븐", "이마트24", "미니스톱"};
+    String names2[] = {"상품 종류 선택", "과자류", "생활용품", "식품", "아이스크림", "음료"};
+    String names3[] = {"플러스 선택", "1+1", "2+1", "3+1"};
+
+    // define array adapter of string type
+    ArrayAdapter <String> adapter;
+    ArrayAdapter <String> adapter2;
+    ArrayAdapter <String> adapter3;
+
+    // define string variable for record
+    String record = "";
+    String record2 = "";
+    String record3 = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) { // main 함수처럼 onCreate() 함수가 시작점의 역할
         super.onCreate(savedInstanceState);
@@ -19,23 +37,137 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // setContentView : 화면에 무엇을 보여줄 것인지 설정해주는 역할
         // R.layout.activity_main : 화면의 구성 요소에 대한 정보
 
-        Spinner spinner = findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.cvs_name, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+        spinner = findViewById(R.id.spinner);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, names);
 
-        spinner = findViewById(R.id.spinner2);
-        adapter = ArrayAdapter.createFromResource(this, R.array.item_category, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+        spinner2 = findViewById(R.id.spinner2);
+        adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, names2);
 
-        spinner = findViewById(R.id.spinner3);
-        adapter = ArrayAdapter.createFromResource(this, R.array.plus_category, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner3 = findViewById(R.id.spinner3);
+        adapter3 = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, names3);
+
+//        display_data = findViewById(R.id.result);
+//        display_data2 = findViewById(R.id.result2);
+//        display_data3 = findViewById(R.id.result3);
+
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+        spinner2.setAdapter(adapter2);
+        spinner3.setAdapter(adapter3);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // use position value
+                switch (position)
+                {
+                    case 0:
+                        record = names[0];
+                        break;
+
+                    case 1:
+                        record = names[1];
+                        break;
+
+                    case 2:
+                        record = names[2];
+                        break;
+
+                    case 3:
+                        record = names[3];
+                        break;
+
+                    case 4:
+                        record = names[4];
+                        break;
+
+                    case 5:
+                        record = names[5];
+                        break;
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // use position value
+                switch (position)
+                {
+                    case 0:
+                        record2 = names2[0];
+                        break;
+
+                    case 1:
+                        record2 = names2[1];
+                        break;
+
+                    case 2:
+                        record2 = names2[2];
+                        break;
+
+                    case 3:
+                        record2 = names2[3];
+                        break;
+
+                    case 4:
+                        record2 = names2[4];
+                        break;
+
+                    case 5:
+                        record2 = names2[5];
+                        break;
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // use position value
+                switch (position)
+                {
+                    case 0:
+                        record3 = names3[0];
+                        break;
+
+                    case 1:
+                        record3 = names3[1];
+                        break;
+
+                    case 2:
+                        record3 = names3[2];
+                        break;
+
+                    case 3:
+                        record3 = names3[3];
+                        break;
+
+                    case 4:
+                        record3 = names3[4];
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+
 
         Button btn_map =  findViewById(R.id.button2);
         btn_map.setOnClickListener(
@@ -53,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 new Button.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(MainActivity.this, MapActivity.class);
+                        Intent intent = new Intent(MainActivity.this, ListActivity.class);
                         startActivity(intent);
                     }
                 }
