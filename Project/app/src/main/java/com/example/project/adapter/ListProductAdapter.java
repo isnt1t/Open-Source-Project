@@ -56,7 +56,7 @@ public class ListProductAdapter extends BaseAdapter{
         Plus.setText(mProductList.get(position).getPlus());
         Category.setText(mProductList.get(position).getCategory());
         Picasso.get().load(mProductList.get(position).getImage()).into(Image);
-        Coin.setImageResource(R.drawable.coin);
+        Coin.setImageResource(R.drawable.coin_img);
 
         return v;
     }
