@@ -48,6 +48,7 @@ public class ListProductAdapter extends BaseAdapter{
         TextView Plus = v.findViewById(R.id.plus);
         TextView Category = v.findViewById(R.id.product_category);
         ImageView Image = v.findViewById(R.id.image);
+        ImageView Coin = v.findViewById(R.id.coin);
 
         Name.setText(mProductList.get(position).getName());
         Price.setText(mProductList.get(position).getPrice() + "원 (개당 가격)");
@@ -55,6 +56,7 @@ public class ListProductAdapter extends BaseAdapter{
         Plus.setText(mProductList.get(position).getPlus());
         Category.setText(mProductList.get(position).getCategory());
         Picasso.get().load(mProductList.get(position).getImage()).into(Image);
+        Coin.setImageResource(R.drawable.coin);
 
         return v;
     }
