@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String DBNAME = "CVS_201912.db";
+    public static final String DBNAME = "CVS.db";
     public static final String DBLOCATION = "/data/data/com.example.project/databases/";
     private Context mContext;
     private SQLiteDatabase mDatabase;
@@ -109,7 +109,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         openDatabase();
         Cursor cursor = mDatabase.rawQuery("SELECT id, product_name, price, cvs_name, image, plus, product_category " +
-                                                "FROM CVS_201912 " +
+                                                "FROM CVS " +
                                                 nameQuery +
                                                 categoryQuery  +
                                                 cvsQuery +
