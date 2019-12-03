@@ -326,7 +326,7 @@ public class MapActivity extends AppCompatActivity
 
 
         if (addresses == null || addresses.size() == 0) {
-            Toast.makeText(this, "주소 미발견", Toast.LENGTH_LONG).show();
+            // Toast.makeText(this, "주소 미발견", Toast.LENGTH_LONG).show();
             return "주소 미발견";
 
         } else {
@@ -358,7 +358,7 @@ public class MapActivity extends AppCompatActivity
         markerOptions.title(markerTitle);
         markerOptions.snippet(markerSnippet);
         markerOptions.draggable(true);
-
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN));
 
         currentMarker = mMap.addMarker(markerOptions);
 
@@ -585,9 +585,9 @@ public class MapActivity extends AppCompatActivity
 
         new NRPlaces.Builder()
                 .listener(MapActivity.this)
-                .key("AIzaSyDwoP93xedxSvF-9ULpsJz3L8LJTL9Ycls")
+                .key("AIzaSyA45WihyzHNRmkFmCHK9tk_zekGY0ggMHo")
                 .latlng(location.latitude, location.longitude)//현재 위치
-                .radius(1000) // 1000 미터 내에서 검색
+                .radius(500) // 500 미터 내에서 검색
                 .type(PlaceType.CONVENIENCE_STORE) // 편의점
                 .build()
                 .execute();
