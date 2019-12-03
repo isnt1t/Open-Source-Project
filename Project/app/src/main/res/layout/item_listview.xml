@@ -5,9 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-
     android:orientation="vertical">
-
 
     <TextView
         android:id="@+id/cvs_name"
@@ -41,7 +39,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-
                 <TextView
                     android:id="@+id/product_category"
                     android:layout_width="wrap_content"
@@ -65,7 +62,6 @@
 
             </LinearLayout>
 
-
             <TextView
                 android:id="@+id/product_name"
                 android:layout_width="wrap_content"
@@ -80,22 +76,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <ImageView
                     android:id="@+id/coin"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"/>
-            <TextView
-                android:id="@+id/price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="1000원 (개당 가격)"
-                android:textColor="#000000"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="1000원 (개당 가격)"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"/>
+
             </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>
