@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Project</string>
+    <string name="app_name">편의득</string>
 
     <string-array name="cvs_name">
         <item>편의점 선택</item>
