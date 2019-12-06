@@ -84,7 +84,6 @@ public class MapActivity extends AppCompatActivity
 
 
     private View mLayout;  // Snackbar 사용하기 위해서는 View가 필요합니다.
-    // (참고로 Toast에서는 Context가 필요했습니다.)
 
     List<Marker> previous_marker = null;
 
@@ -154,9 +153,6 @@ public class MapActivity extends AppCompatActivity
                 hasCoarseLocationPermission == PackageManager.PERMISSION_GRANTED   ) {
 
             // 2. 이미 퍼미션을 가지고 있다면
-            // ( 안드로이드 6.0 이하 버전은 런타임 퍼미션이 필요없기 때문에 이미 허용된 걸로 인식합니다.)
-
-
             startLocationUpdates(); // 3. 위치 업데이트 시작
 
 
@@ -188,8 +184,6 @@ public class MapActivity extends AppCompatActivity
             }
 
         }
-
-
 
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
         mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
@@ -230,8 +224,6 @@ public class MapActivity extends AppCompatActivity
 
                 mCurrentLocation = location;
             }
-
-
         }
 
     };
@@ -267,7 +259,6 @@ public class MapActivity extends AppCompatActivity
                 mMap.setMyLocationEnabled(true);
 
         }
-
     }
 
     @Override
@@ -410,9 +401,7 @@ public class MapActivity extends AppCompatActivity
         return false;
     }
 
-    /*
-     * ActivityCompat.requestPermissions를 사용한 퍼미션 요청의 결과를 리턴받는 메소드입니다.
-     */
+
     @Override
     public void onRequestPermissionsResult(int permsRequestCode,
                                            @NonNull String[] permissions,
@@ -592,7 +581,5 @@ public class MapActivity extends AppCompatActivity
                 .build()
                 .execute();
     }
-
-
 
 }
