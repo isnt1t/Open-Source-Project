@@ -35,11 +35,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public static String name; // product_name
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) { // main 함수처럼 onCreate() 함수가 시작점의 역할
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // setContentView : 화면에 무엇을 보여줄 것인지 설정해주는 역할
-        // R.layout.activity_main : 화면의 구성 요소에 대한 정보
 
         spinner = findViewById(R.id.spinner);
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, names);
@@ -191,8 +189,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     }
                 }
         );
-
-
     }
 
 
@@ -210,7 +206,4 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-
-    // 인텐트가 기존 언어에서는 보기 힘든 기능인 네이버 사이트 접속, 전화 걸기 등을 가능케 한다.
-    // 인텐트는 내가 하고자 하는 행위를 의미한다. (안드로이드 플랫폼에게 원하는 것을 말할 때 전달하는 우편물 같은 것)
 }
